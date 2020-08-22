@@ -19,17 +19,20 @@ It was originally developed by [b. avianto](https://github.com/avianto/hugo-kier
     - [Images](#images)
     - [Code highlight](#code-highlight)
     - [Font Awesome icons](#font-awesome-icons)
-    - [Disqus on demand](#disqus-on-demand)
+    - [Mathematics](#mathematics)
+    - [Commenting](#static-commenting)
   - [Support and Pull Requests](#support-and-pull-requests)
 
 ## Main Features
 - Simple, 'no-nonsense' styling.
 - 4 image placements with `figure` support using shortcodes.
+- (Optional) Feature images for posts and twiter cards.
 - Excellent code highlight support thanks to Hugo Chroma.
-- Use Font Awesome for icons
-- Utilize normalize.css for consistent styling (Cloudflare CDN)
-- Use Google Fonts: Ruda (serif) and Roboto Slab (sans-serif)
-- Disqus comment loaded on demand
+- Use Font Awesome for icons.
+- Utilize normalize.css for consistent styling (Cloudflare CDN).
+- Use Google Fonts: Ruda (serif) and Roboto Slab (sans-serif).
+- [Disqus](https://disqus.com) or [Utterances](https://utteranc.es) comments loaded on demand.
+- Supports downloading extra [Google Fonts](https://fonts.google.com/).
 
 ## Demo
 
@@ -97,10 +100,12 @@ googleAnalytics = "" #Google Analytics ID
     twitter = ""        #Twitter username
     instagram = ""      #Instagram username
     stackoverflow = ""  #StackOverflow username
+    devto = ""          #Dev.to username 
 
 [params]
     tagline = "the tagline for this website"
     customCSS = []  #Optional Customised CSS
+    disableDarkModeCSS = false # disables css style for users using dark-mode
 ```
 
 ### Main Menu
@@ -183,9 +188,17 @@ Using fenced code with Chroma support.
 
 For usage, refer to [Font Awesome](https://fontawesome.com/).
 
-### Disqus on demand
+### Mathematics
 
-[Disqus](https://disqus.com/) comments are loaded on demand, by clicking the <kbd>View Comments</kbd> button.
+Set `Params.mathjax` to true to enable support of mathematics display using [MathJax](https://mathjax.org/).  Math should be, by default, surrounded by dollar signs and produced using LaTeX syntax.  Options may be overriden using `static/js/mathjax-config.js`.
+
+### Static Commenting
+
+[Disqus](https://disqus.com/) comments are loaded on demand, by clicking the <kbd>View Comments</kbd> button. Disqus comments can be automatically loaded and displayed by setting `CommentAutoload = true` in `config.toml`.
+
+[Utterances](https://utteranc.es), a Git based comment system, is also available. Utterance comments are loaded and displayed by default.
+
+Comments can be disabled for a single page by setting `disableComments = true` in the page frontmatter.
 
 ## Support and Pull Requests
 
